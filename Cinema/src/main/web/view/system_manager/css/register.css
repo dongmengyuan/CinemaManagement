@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; }
+#register{
+    padding: 25px;
+    background-color: rgba(195, 186, 186, 0.2);
+}
+body {
+    background: url(../image/sky.jpg) no-repeat;
+
+}
+p{
+    color: white;
+}
+#alert{
+    color:red;
+    text-align: center;
+}
+button{
+    margin-top: 40px;
+}

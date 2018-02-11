@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Bootstrap/bs.css">
+    <link rel="stylesheet" href="css/register.css">
+    <title>manager_register</title>
+</head>
+<body>
+<div class="container">
+    <div style="margin: 12% 37%;" id="register">
+        <div id="alert"></div>
+        <form role="form">
+            <div class="form-group">
+                <p align="center">用户名</p>
+                <input type="text" class="form-control" id="name" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <p align="center">手机号</p>
+                <input type="text" class="form-control" id="tel" placeholder="请输入手机号">
+            </div>
+            <div class="form-group">
+                <p align="center">密码</p>
+                <input type="password" class="form-control" id="pass" placeholder="请输入密码">
+            </div>
+        </form>
+        <button type="submit" class="btn btn-primary  btn-block" onclick="register()">注册</button>
+    </div>
+</div>
+<script src="javascript/register.js"></script>
+</body>
+
+</html>

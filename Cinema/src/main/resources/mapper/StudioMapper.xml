@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cinema.dao.StudioDAO">
+    <insert id="insertStudio" parameterType="Studio" useGeneratedKeys="true" keyProperty="studio_id">
+        insert into studio(
+        studio_name,
+        studio_row_count,
+        studio_col_count,
+        studio_introduction,
+        studio_flag)
+        values(
+        #{studio_name},
+        #{studio_row_count},
+        #{studio_col_count},
+        #{studio_introduction},
+        #{studio_flag})
+    </insert>
+
+    <delete id="deleteStudio" parameterType="int">
+        delete from studio where studio_id = #{studio_id}
+    </delete>
+
+    <update id="updateStudio" parameterType="Studio">
+        update studio set
+        studio_name = #{studio_name},
+        studio_row_count = #{studio_row_count},
+        studio_col_count = #{studio_col_count},
+        studio_introduction = #{studio_introduction},
+        studio_flag = #{studio_flag}
+        where studio_id = #{studio_id}
+    </update>
+
+    <select id="selectStudioByStudio_id" parameterType="int" resultType="Studio">
+        select * from studio where studio_id = #{studio_id}
+    </select>
+
+    <select id="selectStudioByStudio_name" parameterType="String" resultType="Studio">
+        select * from studio where studio_name = #{studio_name}
+    </select>
+
+    <select id="selectStudioByStudio_flag" parameterType="int" resultType="Studio">
+        select * from studio where studio_flag = #{studio_flag}
+    </select>
+
+    <select id="selectStudio" resultType="Studio">
+        select * from studio order by studio_id desc
+    </select>
+
+    <select id="selectSpecialStudio" parameterType="int" resultType="Studio">
+        select * from studio where studio_id != #{studio_id}
+    </select>
+
+
+</mapper>

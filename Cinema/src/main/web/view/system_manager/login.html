@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Bootstrap/bs.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>login</title>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎使用FZN影院管理系统</h1>
+        <div id="login">
+            <div id="alert"></div>
+            <form role="form" method="post" action="./stdio.html" onsubmit="return confirm()">
+                <div class="form-group">
+                    <p align="center">帐名</p>
+                    <input type="text" class="form-control" id="name" placeholder="请输入账号" required="required" autofocus>
+                </div>
+                <div class="form-group">
+                    <p align="center">密码</p>
+                    <input type="password" class="form-control" id="pass" placeholder="请输入密码" required="required">
+                </div>
+                <div id="but">
+                    <button type="submit" class="btn btn-primary  btn-block" onclick="confirm()">登陆</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="javascript/login.js"></script>
+</body>
+
+</html>

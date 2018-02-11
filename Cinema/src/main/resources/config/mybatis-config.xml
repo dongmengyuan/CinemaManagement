@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 命名空间 -->
+    <typeAliases>
+
+        <typeAlias alias="list" type="java.util.List"/>
+        <typeAlias alias="Employee" type="com.ttms.entity.Employee"/>
+        <typeAlias alias="Play" type="com.ttms.entity.Play"/>
+        <typeAlias alias="Schedule" type="com.ttms.entity.Schedule"/>
+        <typeAlias alias="Seat" type="com.ttms.entity.Seat"/>
+        <typeAlias alias="Studio" type="com.ttms.entity.Studio"/>
+        <typeAlias alias="ScheduleDetail" type="com.ttms.entity.ScheduleDetail"/>
+        <typeAlias alias="Notice" type="com.ttms.entity.Notice"/>
+        <typeAlias alias="Page" type="com.ttms.entity.Page"/>
+
+    </typeAliases>
+
+
+
+
+    <!-- 映射map -->
+    <mappers>
+    </mappers>
+</configuration>

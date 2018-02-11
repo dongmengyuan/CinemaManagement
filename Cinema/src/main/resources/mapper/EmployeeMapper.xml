@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cinema.dao.EmployeeDAO">
+    <insert id="insertEmployee" parameterType="Employee" useGeneratedKeys="true" keyProperty="emp_id">
+        insert into employee(
+        emp_no,
+        emp_pass,
+        type,
+        emp_name,
+        emp_tel_num,
+        emp_addr,
+        emp_email,
+        emp_sex,
+        emp_birth,
+        emp_native,
+        emp_pic)
+        values(
+        #{emp_no},
+        #{emp_pass},
+        #{type},
+        #{emp_name},
+        #{emp_tel_num},
+        #{emp_addr},
+        #{emp_email},
+        #{emp_sex},
+        #{emp_birth},
+        #{emp_native},
+        #{emp_pic})
+    </insert>
+
+    <delete id="deleteEmployee" parameterType="int">
+        delete from employee where emp_id = #{emp_id}
+    </delete>
+
+    <update id="updateEmployee" parameterType="Employee">
+        update employee set
+        emp_no = #{emp_no},
+        emp_pass = #{emp_pass},
+        type = #{type},
+        emp_name = #{emp_name},
+        emp_tel_num = #{emp_tel_num},
+        emp_addr = #{emp_addr},
+        emp_email = #{emp_email},
+        emp_sex = #{emp_sex},
+        emp_birth = #{emp_birth},
+        emp_native = #{emp_native},
+        emp_pic = #{emp_pic}
+        where emp_id = #{emp_id}
+    </update>
+    
+    
+    <select id="selectEmployeeByEmp_id" parameterType="int" resultType="Employee">
+        select * from employee where emp_id = #{emp_id}
+    </select>
+    
+    <select id="selectEmployeeByEmp_no" parameterType="String" resultType="Employee">
+        select * from employee where emp_no = #{emp_no}
+    </select>
+
+    <select id="selectEmployeeByType" parameterType="int" resultType="Employee">
+        select * from employee where type = #{type}
+    </select>
+    
+    <select id="selectEmployeeByEmp_name" parameterType="String" resultType="Employee">
+        select * from employee where emp_name = #{emp_name}
+    </select>
+
+    <select id="selectEmployeeByEmp_tel_num" parameterType="String" resultType="Employee">
+        select * from employee where emp_tel_num = #{emp_tel_num}
+    </select>
+
+    <select id="selectEmployeeByEmp_addr" parameterType="String" resultType="Employee">
+        select * from employee where emp_addr = #{emp_addr}
+    </select>
+
+    <select id="selectEmployeeByEmp_email" parameterType="String" resultType="Employee">
+        select * from employee where emp_email = #{emp_email}
+    </select>
+
+    <select id="selectEmployeeByEmp_sex" parameterType="String" resultType="Employee">
+        select * from employee where emp_sex = #{emp_sex}
+    </select>
+
+    <select id="selectEmployeeByEmp_birth" parameterType="String" resultType="Employee">
+        select * from employee where emp_birth = #{emp_birth}
+    </select>
+
+    <select id="selectEmployeeByEmp_native" parameterType="String" resultType="Employee">
+        select * from employee where emp_native = #{emp_native}
+    </select>
+
+    <select id="selectEmployee" resultType="Employee">
+        select * from employee order by emp_id desc
+    </select>
+
+    <select id="selectCommonEmployee" resultType="Employee">
+        select * from employee where type = 0 order by emp_id desc
+    </select>
+
+    <select id="selectTopEmployee" resultType="Employee">
+        select * from employee where type = 1 order by emp_id desc
+    </select>
+    
+</mapper>

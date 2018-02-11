@@ -1,0 +1,28 @@
+* { margin: 0; padding: 0; }
+h1{
+    font-family: "AR PL UKai TW MBE";
+    font-size:60px;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+}
+#login{
+    margin: 5% 37%;
+    padding: 25px;
+    background-color: rgba(195, 186, 186, 0.2);
+}
+body {
+    background: url(../image/sky.jpg)  no-repeat;
+    background-position: center center;
+    /*background-size: cover;*/
+}
+p{
+    color: white;
+}
+#alert{
+    color:red;
+    text-align: center;
+}
+#but{
+    margin-top: 40px;
+}

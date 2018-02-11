@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cinema.dao.SeatDAO">
+    <insert id="insertSeat" parameterType="Seat" useGeneratedKeys="true" keyProperty="seat_id">
+        insert into seat(
+        studio_id,
+        seat_row,
+        seat_column,
+        seat_status)
+        values(
+        #{studio_id},
+        #{seat_row},
+        #{seat_column},
+        #{seat_status})
+    </insert>
+
+    <delete id="deleteSeat" parameterType="int">
+        delete from seat where seat_id = #{seat_id}
+    </delete>
+
+    <delete id="deleteAllSeat">
+        delete from seat
+    </delete>
+
+    <update id="updateSeat" parameterType="Seat">
+        update seat set
+        studio_id = #{studio_id},
+        seat_row = #{seat_row},
+        seat_column = #{seat_column},
+        seat_status = #{seat_status}
+        where seat_id = #{seat_id}
+    </update>
+
+    <select id="selectSeatBySeat_id" parameterType="int" resultType="Seat">
+        select * from seat where seat_id = #{seat_id}
+    </select>
+
+    <select id="selectSeatByStudio_id" parameterType="int" resultType="Seat">
+        select * from seat where studio_id = #{studio_id}
+    </select>
+
+    <select id="selectSeatBySeat_row" parameterType="int" resultType="Seat">
+        select * from seat where seat_row = #{seat_row}
+    </select>
+
+    <select id="selectSeatBySeat_column" parameterType="int" resultType="Seat">
+        select * from seat where seat_column = #{seat_column}
+    </select>
+
+    <select id="selectSeatBySeat_status" parameterType="int" resultType="Seat">
+        select * from seat where seat_status = #{seat_status}
+    </select>
+
+    <select id="selectSeat" resultType="Seat">
+        select * from seat
+    </select>
+
+    <select id="selectSeatByPosition" resultType="Seat">
+        select * from seat where studio_id = #{studio_id} and seat_row = #{seat_row} and seat_column = #{seat_column}
+    </select>
+
+
+</mapper>

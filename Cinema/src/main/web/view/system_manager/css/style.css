@@ -1,0 +1,86 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+.front-indicator {
+	width: 100px;
+	margin: 0px 20px 15px 120px;
+	background-color: #f6f6f6;
+	color: darkslateblue;
+	text-align: center;
+	padding: 3px;
+	border-radius: 5px;
+}
+.wrapper {
+	width: 100%;
+	text-align: center;
+}
+.container {
+	margin: 0 auto;
+	width: 700px;
+	text-align: left;
+}
+.booking-details {
+	float: left;
+	text-align: left;
+	margin-left: 35px;
+	font-size: 12px;
+	position: relative;
+	height: 401px;
+}
+/**/
+div.seatCharts-cell {
+	color: #182C4E;
+	height: 35px;
+	width: 35px;
+	line-height: 30px;
+
+}
+div.seatCharts-seat {
+	color: #FFFFFF;
+	cursor: pointer;	
+}
+div.seatCharts-row {
+	height: 40px;
+}
+div.seatCharts-seat.available {
+	background-color: #B9DEA0;
+
+}
+div.seatCharts-seat.focused {
+	background-color: #76B474;
+}
+div.seatCharts-seat.selected {
+	background-color: #472B34;
+}
+div.seatCharts-seat.clear {
+	background-color: white;
+}
+div.seatCharts-container {
+	border-right: 1px dotted #adadad;
+	width: 450px;
+	padding: 20px;
+	float: left;
+}
+div.seatCharts-legend {
+	padding-left: 0px;
+	position: absolute;
+	bottom: 16px;
+}
+ul.seatCharts-legendList {
+	padding-left: 0px;
+}
+span.seatCharts-legendDescription {
+	margin-left: 5px;
+	line-height: 30px;
+}
+
+#selected-seats {
+	max-height: 90px;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	width: 170px;
+}
+
+#seat{
+	margin-top: 50px;
+}

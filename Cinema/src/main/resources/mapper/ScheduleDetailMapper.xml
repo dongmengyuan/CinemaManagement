@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cinema.dao.ScheduleDetailDAO">
+    <select id="selectScheduleDetail" resultType="ScheduleDetail">
+
+        select schedule.sched_id, studio.studio_name, play.play_name, schedule.sched_time,
+        schedule.sched_ticket_price from studio,play,schedule where studio.studio_id=
+        schedule.studio_id and play.play_id = schedule.play_id
+    </select>
+
+    <select id="selectOneScheduleDetail"  parameterType="int" resultType="ScheduleDetail">
+
+        select schedule.sched_id, studio.studio_name, play.play_name, schedule.sched_time,
+        schedule.sched_ticket_price from studio,play,schedule where studio.studio_id=
+        schedule.studio_id and play.play_id = schedule.play_id and schedule.sched_id = #{sched_id}
+
+    </select>
+
+</mapper>

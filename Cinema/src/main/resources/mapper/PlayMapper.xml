@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cinema.dao.PlayDAO">
+
+    <insert id="insertPlay" parameterType="Play" useGeneratedKeys="true" keyProperty="play_id">
+        insert into play(
+        play_type,
+        play_lang,
+        play_name,
+        play_introduction,
+        play_image,
+        play_length,
+        play_ticket_price,
+        play_status)
+        values(
+        #{play_type},
+        #{play_lang},
+        #{play_name},
+        #{play_introduction},
+        #{play_image},
+        #{play_length},
+        #{play_ticket_price},
+        #{play_status})
+    </insert>
+
+
+    <delete id="deletePlay" parameterType="int">
+        delete from play where play_id = #{play_id}
+    </delete>
+
+    <update id="updatePlay" parameterType="Play">
+        update play set
+        play_type = #{play_type},
+        play_lang = #{play_lang},
+        play_name = #{play_name},
+        play_introduction = #{play_introduction},
+        play_image = #{play_image},
+        play_length = #{play_length},
+        play_ticket_price = #{play_ticket_price},
+        play_status = #{play_status}
+        where play_id = #{play_id}
+    </update>
+
+    <select id="selectPlayByPlay_id" parameterType="int" resultType="Play">
+        select * from play where play_id = #{play_id}
+    </select>
+
+    <select id="selectPlayByPlay_type" parameterType="String" resultType="Play">
+        select * from play where play_type = #{play_type}
+    </select>
+
+    <select id="selectPlayByPlay_lang" parameterType="String" resultType="Play">
+        select * from play where play_lang = #{play_lang}
+    </select>
+
+    <select id="selectPlayByPlay_name" parameterType="String" resultType="Play">
+        select * from play where play_name = #{play_name}
+    </select>
+
+
+    <select id="selectPlayByPlay_introduction" parameterType="String" resultType="Play">
+        select * from play where play_introduction = #{play_introduction}
+    </select>
+    
+    <select id="selectPlayByPlay_image" parameterType="String" resultType="Play">
+        select * from play where play_image = #{play_image}
+    </select>
+
+    <select id="selectPlayByPlay_length" parameterType="int" resultType="Play">
+        select * from play where play_length = #{play_length}
+    </select>
+
+    <select id="selectPlayByPlay_ticket_price" parameterType="double" resultType="Play">
+        select * from play where play_ticket_price = #{play_ticket_price}
+    </select>
+
+    <select id="selectPlayByPlay_status" parameterType="int" resultType="Play">
+        select * from play where play_status = #{play_status}
+    </select>
+
+    <select id="selectPlay" resultType="Play">
+        select * from play order by play_id desc
+    </select>
+
+</mapper>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cinema.dao.ScheduleDAO">
+
+    <insert id="insertSchedule" parameterType="Schedule" useGeneratedKeys="true" keyProperty="sched_id">
+        insert into schedule(
+        studio_id,
+        play_id,
+        sched_time,
+        sched_ticket_price)
+        values(
+        #{studio_id},
+        #{play_id},
+        #{sched_time},
+        #{sched_ticket_price})
+    </insert>
+
+
+    <delete id="deleteSchedule" parameterType="int">
+        delete from schedule where sched_id = #{sched_id}
+    </delete>
+
+
+    <update id="updateSchedule" parameterType="Schedule">
+        update schedule set
+        studio_id = #{studio_id},
+        play_id = #{play_id},
+        sched_time = #{sched_time},
+        sched_ticket_price = #{sched_ticket_price}
+        where sched_id = #{sched_id}
+    </update>
+
+    <select id="selectScheduleBySched_id" parameterType="int" resultType="Schedule">
+        select * from schedule where sched_id = #{sched_id}
+    </select>
+
+    <select id="selectScheduleByStudio_id" parameterType="int" resultType="Schedule">
+        select * from schedule where studio_id = #{studio_id}
+    </select>
+
+    <select id="selectScheduleBySpecialStudio_id" parameterType="int" resultType="Schedule">
+        select * from schedule where studio_id = #{studio_id} and sched_id != #{sched_id}
+    </select>
+
+    <select id="selectScheduleByPlay_id" parameterType="int" resultType="Schedule">
+        select * from schedule where play_id = #{play_id}
+    </select>
+
+    <select id="selectScheduleBySched_time" parameterType="String" resultType="Schedule">
+        select * from schedule where sched_time = #{sched_time}
+    </select>
+
+    <select id="selectScheduleBySched_ticket_price" parameterType="double" resultType="Schedule">
+        select * from schedule where sched_ticket_price = #{sched_ticket_price}
+    </select>
+
+    <select id="selectSchedule" resultType="Schedule">
+        select * from schedule order by sched_id desc
+    </select>
+</mapper>

@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(195, 186, 186, 0.2);
+    /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-v1-TLrSnVH-jB56Z1ECaYFrr82jfbEJK8STmykbGU7986yzi");*/
+    padding: 5px;
+}
+
+#ww {
+
+    margin: 30px 20px;
+    padding: 10px;
+}
+
+#ss {
+    text-align: center;
+}
+
+#stdio{
+    text-align: center;
+}
+
+tr{
+    height: 50px;
+}
+
+div.modal {
+    top: 10%;
+}
+
+#center{
+    width:20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
